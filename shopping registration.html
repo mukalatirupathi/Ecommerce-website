@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header{
+            border: 2px solid black;
+            justify-content: center;
+    
+        }
+    </style>
+    <script>
+        function registerclick(){
+            var email=document.getElementById("mail").value;
+            var password=document.getElementById("pass").value;
+            var confrom=document.getElementById("con").value;
+
+        var hlo=localStorage.setItem("email",email);
+        var hii=localStorage.setItem("password",password);
+        var hi=localStorage.setItem("confrim password",confrom);
+
+        var hlo=localStorage.getItem("email",email);
+        var hii=localStorage.getItem("password",password);
+        var hi=localStorage.getItem("confrim password",confrom);
+        var a,b,c;
+           a="tirupathimukala0808@gmail.com";
+           b=1234;
+           c=1234;
+          if (a==hlo && b==hii && c==hi){
+            alert("register succusfully");
+          }
+          else{
+            alert("invalid details!");
+          }
+
+    }
+    function loginclick(){
+        var email=document.getElementById("mail").value;
+            var password=document.getElementById("pass").value;
+
+        var hlo=localStorage.setItem("email",email);
+        var hii=localStorage.setItem("password",password);
+
+
+        var hlo=localStorage.getItem("email",email);
+        var hii=localStorage.getItem("password",password);
+
+        var d,e;
+        d=document.getElementById("email").value;
+        e=document.getElementById("password").value;
+
+        if(d==hlo && e==hii){
+          window.location.href="http://127.0.0.1:3000/src/Ecart%20shopping2.html";
+        }
+        else{
+            alert("invalid details! Register first");
+        }
+    }
+    </script>
+</head> 
+<body class="container-fluid">
+    <header class="d-flex bg-dark text-white">
+        <div>
+            <h1 class="mt-3"><span class="bi bi-cart4"></span>Shopping</h1>
+        </div>
+                
+        </header>
+        <main>
+            <div>
+                <button class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#register">Register</button>
+                <div class="modal fade" id="register">
+                    <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="btn btn-success w-100">user Register form</h1>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                                <dl>
+                                    <dt>Email</dt>
+                                    <dd><input type="email" class="w-100" id="mail" ></dd>
+                                    <dt>password</dt>
+                                    <dd><input type="password"class="w-100" id="pass"></dd>
+                                    <dt>confrim password</dt>
+                                    <dd><input type="password" class="w-100" id="con"></dd>
+                               </dl>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                           <button class="btn btn-success" onclick="registerclick()">Register</button>
+                           <button class="btn btn-danger">Cancel</button>
+                          </div>
+                                
+                        </div>
+            
+                    </div>
+            
+                </div>
+                <div>
+                    <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+                    <div class="modal fade" id="login">
+                        <div class="modal-dialog modal-dialog-centered ">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="btn btn-success w-100">user login form</h1>
+                                <button class="btn-close" data-bs-dismiss="modal"></button>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <dl>
+                                        <dt>Email</dt>
+                                        <dd><input type="email" class="w-100" id="email"></dd>
+                                        <dt>password</dt>
+                                        <dd><input type="password"class="w-100" id="password"></dd>
+                                   </dl>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                               <button class="btn btn-success" onclick="loginclick()">Login</button>
+                               <button class="btn btn-danger">Cancel</button>
+                              </div>
+                                    
+                            </div>
+                
+                        </div>
+                
+                    </div>
+                    
+        </main>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> 
+</body>
+</html>
